@@ -1,0 +1,44 @@
+# Dependencias
+node_modules/
+
+# Builds y distribuciones
+dist/
+build/
+out/
+coverage/
+
+# Archivos de entorno
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Cachés
+.cache/
+.next/
+.nuxt/
+.svelte-kit/
+vite.config.ts.timestamp-*
+*.tsbuildinfo
+
+# Sistemas operativos
+.DS_Store
+Thumbs.db
+
+# Herramientas
+/.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# Paquetes temporales
+*.tgz
+
+# Lock opcionales según el gestor (descomenta si no usas alguno)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
