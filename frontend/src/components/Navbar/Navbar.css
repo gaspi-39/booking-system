@@ -18,15 +18,17 @@
   padding: 0;
 }
 
+/* Para los <Link> del navbar */
 .nav-link {
   position: relative;
+  text-decoration: none; /* Importante para que React Router no lo subraye */
   color: #f1f1f1;
-  padding-bottom: 4px; 
+  padding-bottom: 4px;
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
-/* Subrayado elegante */
+/* Subrayado suave animado */
 .nav-link::after {
   content: "";
   position: absolute;
@@ -46,3 +48,4 @@
 .nav-link:hover::after {
   width: 100%;
 }
+
