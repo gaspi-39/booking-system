@@ -42,3 +42,5 @@ Thumbs.db
 # package-lock.json
 # yarn.lock
 # pnpm-lock.yaml
+backend/src/db/config.js
+backend/src/db/.env.db
