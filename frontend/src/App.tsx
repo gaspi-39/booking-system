@@ -1,36 +1,28 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar/Navbar";
-import "./App.css"
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Layout from "./layout/Layout";
 
-// Importá tus páginas
 import Inicio from "./pages/Inicio";
 import Habitaciones from "./pages/Habitaciones";
 import Reservar from "./pages/Reservar";
 import MisReservas from "./pages/MisReservas";
 import Contacto from "./pages/Contacto";
 
-function App() {
-  return (
-    <BrowserRouter>
-      <Navbar 
-        links={[
-          { label: "Inicio", path: "/" },
-          { label: "Habitaciones", path: "/habitaciones" },
-          { label: "Reservar", path: "/reservar" },
-          { label: "Mis Reservas", path: "/mis-reservas" },
-          { label: "Contacto", path: "/contacto" }
-        ]}
-      />
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />, // TODAS las páginas pasan por este layout
+    children: [
+      { path: "/", element: <Inicio /> },
+      { path: "/habitaciones", element: <Habitaciones /> },
+      { path: "/reservar", element: <Reservar /> },
+      { path: "/mis-reservas", element: <MisReservas /> },
+      { path: "/contacto", element: <Contacto /> },
+    ]
+  }
+]);
 
-      <Routes>
-        <Route path="/" element={<Inicio />} />
-        <Route path="/habitaciones" element={<Habitaciones />} />
-        <Route path="/reservar" element={<Reservar />} />
-        <Route path="/mis-reservas" element={<MisReservas />} />
-        <Route path="/contacto" element={<Contacto />} />
-      </Routes>
-    </BrowserRouter>
-  );
+function Main() {
+  return <RouterProvider router={router} />
 }
 
-export default App;
+export default Main;
