@@ -1,0 +1,48 @@
+.nav-bar {
+  background: linear-gradient(to right, #0d3b66, #145da0);
+  padding: 1.2rem 2rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.nav-list {
+  display: flex;
+  gap: 50px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  position: relative;
+  color: #f1f1f1;
+  padding-bottom: 4px; 
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* Subrayado elegante */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #f5d78c; /* dorado */
+  transition: width 0.4s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+/* Animación suave del subrayado */
+.nav-link:hover::after {
+  width: 100%;
+}
