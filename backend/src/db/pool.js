@@ -16,3 +16,4 @@ const pool = mysql.createPool({
 	password: DB_PASSWORD,
 	database: DB_NAME,
 })
+export default pool
