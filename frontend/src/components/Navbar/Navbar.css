@@ -2,10 +2,17 @@
   background: linear-gradient(to right, #0d3b66, #145da0);
   padding: 1.2rem 2rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  top:0;
+  top: 0;
   position: sticky;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* ========================== */
+/* NAV LIST (DESKTOP) */
+/* ========================== */
 .nav-list {
   display: flex;
   gap: 50px;
@@ -13,24 +20,21 @@
   font-size: 19px;
   font-weight: 500;
   letter-spacing: 1px;
-  justify-content: center;
-  align-items: center;
   list-style: none;
   margin: 0;
   padding: 0;
+  transition: all .3s ease;
 }
 
-/* Para los <Link> del navbar */
 .nav-link {
   position: relative;
-  text-decoration: none; /* Importante para que React Router no lo subraye */
+  text-decoration: none;
   color: #f1f1f1;
   padding-bottom: 4px;
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
-/* Subrayado suave animado */
 .nav-link::after {
   content: "";
   position: absolute;
@@ -38,7 +42,7 @@
   left: 0;
   width: 0%;
   height: 2px;
-  background-color: #f5d78c; /* dorado */
+  background-color: #f5d78c;
   transition: width 0.4s ease;
 }
 
@@ -46,8 +50,56 @@
   color: #ffffff;
 }
 
-/* Animación suave del subrayado */
 .nav-link:hover::after {
   width: 100%;
 }
 
+/* ========================== */
+/* HAMBURGER BUTTON */
+/* ========================== */
+.hamburger {
+  position: absolute;
+  left: 20px; /* A LA IZQUIERDA 👈 */
+  cursor: pointer;
+  display: none; /* oculto en desktop */
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: #f5d78c;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+/* ========================== */
+/* RESPONSIVE */
+/* ========================== */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-list {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to right, #0d3b66, #145da0);
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 30px 0;
+    transform: translateY(-200%);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .nav-list.open {
+    transform: translateY(0%);
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

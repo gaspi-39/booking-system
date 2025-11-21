@@ -1,17 +1,59 @@
-.img-container{
+.img-container {
   background-image: url('../../../public/images/sierras.jpg');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
-  padding: 50px;
+  padding: 60px;
+  min-height: 4vh;
+
+  /* suaviza un poco la imagen */
+  position: relative;
+  overflow: hidden;
 }
 
-.title{
-  color: rgb(255, 255, 255);
+/* Oscurecido suave para mejorar el contraste del título */
+.img-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+}
+
+.title {
+  position: relative;
+  color: #ffffff;
   font-size: 3rem;
   font-weight: bold;
-  text-shadow: 0 8px 3px rgba(0, 0, 0, 0.5);
+  text-align: center;
+
+  text-shadow: 0 4px 3px rgba(0, 0, 0, 0.6);
+  padding: 0 20px;
+}
+
+/* 📱 Móviles */
+@media (max-width: 768px) {
+  .img-container {
+    padding: 40px;
+    min-height: 35vh;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+}
+
+/* 📱 Teléfonos pequeños */
+@media (max-width: 480px) {
+  .img-container {
+    padding: 30px;
+    min-height: 30vh;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
 }
