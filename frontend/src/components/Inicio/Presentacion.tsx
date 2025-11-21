@@ -7,6 +7,7 @@ function Presentacion() {
         <p className='slogan'>
           <span className='slogan1'>Lugar</span> <span className='slogan2'>soñado</span>
         </p>
+        <button className='btn-reservar'>Reservar</button>
       </div>
 
       <img 
