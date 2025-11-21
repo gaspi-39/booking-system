@@ -2,6 +2,8 @@
   background: linear-gradient(to right, #0d3b66, #145da0);
   padding: 1.2rem 2rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  top:0;
+  position: sticky;
 }
 
 .nav-list {

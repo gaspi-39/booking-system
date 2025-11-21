@@ -1,0 +1,17 @@
+.img-container{
+  background-image: url('../../../public/images/sierras.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  padding: 50px;
+}
+
+.title{
+  color: rgb(255, 255, 255);
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 0 8px 3px rgba(0, 0, 0, 0.5);
+}

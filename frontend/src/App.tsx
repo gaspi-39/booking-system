@@ -1,11 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./layout/Layout";
 
-import Inicio from "./pages/Inicio";
-import Habitaciones from "./pages/Habitaciones";
-import Reservar from "./pages/Reservar";
-import MisReservas from "./pages/MisReservas";
-import Contacto from "./pages/Contacto";
+import Inicio from "./pages/Inicio/Inicio";
+import Habitaciones from "./pages/Habitaciones/Habitaciones";
+import Reservar from "./pages/Reservar/Reservar";
+import MisReservas from "./pages/MisReservas/MisReservas";
+import Contacto from "./pages/Contacto/Contacto";
 
 const router = createBrowserRouter([
   {

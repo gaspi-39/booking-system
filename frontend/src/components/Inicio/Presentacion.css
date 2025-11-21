@@ -1,0 +1,94 @@
+/* --- CONTENEDOR PRINCIPAL --- */
+.presentacion-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 60px;
+  gap: 40px;
+  background: white;
+  min-height: 70vh;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  margin-top: 50px;
+}
+
+/* --- CAJA DEL TEXTO --- */
+.caja-presentacion {
+  flex: 1;
+  padding: 40px;
+  animation: slideInLeft 1s ease-in;
+}
+
+/* --- SLOGAN --- */
+.slogan {
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* Cada palabra aparece con una animación distinta */
+.slogan1 {
+  opacity: 0;
+  animation: fadeInText 1s ease-in forwards;
+}
+
+.slogan2 {
+  opacity: 0;
+  animation: fadeInText 1s ease-in forwards;
+  animation-delay: 0.8s;
+}
+
+/* --- IMAGEN --- */
+.presentacion-img {
+  flex: 1;
+  width: 100%;
+  border-radius: 6px;
+  object-fit: cover;
+  animation: slideInRight 1s ease forwards;
+}
+
+/* --- ANIMACIONES --- */
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    
+  }
+  to {
+    opacity: 1;
+   
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    
+  }
+  to {
+    opacity: 1;
+    
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+   
+  }
+  to {
+    opacity: 1;
+    
+  }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .presentacion-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .presentacion-img {
+    margin-top: 20px;
+  }
+}
