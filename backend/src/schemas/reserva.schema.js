@@ -14,3 +14,4 @@ export const reservaSchema = z.object({
 	}),
 	diasEstadia: z.number().int().min(1),
 })
+export const idSchema = z.number().int().min(1)

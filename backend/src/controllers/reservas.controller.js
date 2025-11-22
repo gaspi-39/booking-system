@@ -9,10 +9,7 @@ const ReservasController = {
 		res.json(reservas)
 	},
 	async getReservasById(req, res) {
-		const { id } = Number(req.params)
-		if (!id || id < 0) {
-			throw new HttpError(400, "ID requerido")
-		}
+		const { id } = req.params
 		const reserva = await ReservasService.findById(id)
 		if (!reserva) {
 			throw new HttpError(404, "Reserva no encontrada")
@@ -30,9 +27,6 @@ const ReservasController = {
 	},
 	async deleteReserva(req, res) {
 		const { id } = req.params
-		if (!id || id < 0) {
-			throw new HttpError(400, "ID válido requerido")
-		}
 		const reserva = await ReservasService.findById(id)
 		if (!reserva) {
 			throw new HttpError(404, "Reserva no encontrada")
@@ -47,10 +41,6 @@ const ReservasController = {
 	},
 	async updateReserva(req, res) {
 		const { id } = req.params
-
-		if (!id || id < 0) {
-			throw new HttpError(400, "ID válido requerido")
-		}
 
 		const reserva = await ReservasService.findById(id)
 		if (!reserva) {

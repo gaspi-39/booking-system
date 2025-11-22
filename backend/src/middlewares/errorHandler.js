@@ -1,6 +1,6 @@
 // middlewares/errorHandler.js
 export function errorHandler(err, req, res, next) {
-	console.error("errorHanler:", err)
+	console.error("catched:", err)
 
 	const status = err.status || 500
 	const message = err.message || "Error interno del servidor"
