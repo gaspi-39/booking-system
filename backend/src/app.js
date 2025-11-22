@@ -5,9 +5,9 @@ import { errorHandler } from "./middlewares/errorHandler.js"
 
 const app = express()
 app.use(express.json())
+app.use(cors())
 
 app.use("/reservas", reservasRouter)
-app.use(cors())
 
 app.use(errorHandler)
 
