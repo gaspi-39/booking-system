@@ -23,9 +23,23 @@ const ReservasService = {
 		return result
 	},
 	async delete(id) {
-		const sql = `DELETE FROM nombre_de_la_tabla
-WHERE id = ?;`
+		const sql = `DELETE FROM reservas
+		WHERE id = ?;`
 		const [result] = await pool.execute(sql, [id])
+		return result
+	},
+	async update(id, reserva) {
+		const sql = `
+    	UPDATE reservas
+    	SET nombre = ?, dni = ?, fechaIngreso = ?, diasEstadia = ?
+    	WHERE id = ?`
+		const [result] = await pool.execute(sql, [
+			reserva.nombre,
+			reserva.dni,
+			reserva.fechaIngreso,
+			reserva.diasEstadia,
+			id,
+		])
 		return result
 	},
 }

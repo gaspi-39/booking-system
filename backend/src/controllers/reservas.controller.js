@@ -29,11 +29,34 @@ const ReservasController = {
 		res.json({ ok: true })
 	},
 	async deleteReserva(req, res) {
-		const { id } = Number(req.params)
+		const { id } = req.params
 		if (!id || id < 0) {
-			throw new HttpError(400, "ID requerido")
+			throw new HttpError(400, "ID válido requerido")
 		}
-		const result = await ReservasService.delete(id)
+		const reserva = await ReservasService.findById(id)
+		if (!reserva) {
+			throw new HttpError(404, "Reserva no encontrada")
+		}
+
+		const result = await ReservasService.delete(Number(id))
+		if (result.affectedRows != 1) {
+			console.log(result)
+			throw new HttpError(500, "Algo salio mal")
+		}
+		res.json({ ok: true })
+	},
+	async updateReserva(req, res) {
+		const { id } = req.params
+
+		if (!id || id < 0) {
+			throw new HttpError(400, "ID válido requerido")
+		}
+
+		const reserva = await ReservasService.findById(id)
+		if (!reserva) {
+			throw new HttpError(404, "Reserva no encontrada")
+		}
+		const result = await ReservasService.update(Number(id), req.body)
 		if (result.affectedRows != 1) {
 			console.log(result)
 			throw new HttpError(500, "Algo salio mal")

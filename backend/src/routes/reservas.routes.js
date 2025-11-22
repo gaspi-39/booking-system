@@ -9,4 +9,5 @@ router.get("/", ReservasController.getReservas)
 router.get("/:id", ReservasController.getReservasById)
 router.post("/", validate(reservaSchema), ReservasController.createReserva)
 router.delete("/:id", ReservasController.deleteReserva)
+router.put("/:id", validate(reservaSchema), ReservasController.updateReserva)
 export default router
