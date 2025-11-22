@@ -23,7 +23,7 @@ const ReservasController = {
 
 			throw new HttpError(500, "Algo salio mal")
 		}
-		res.json({ ok: true })
+		res.status(201).json({ ok: true })
 	},
 	async deleteReserva(req, res) {
 		const { id } = req.params
@@ -37,7 +37,7 @@ const ReservasController = {
 			console.log(result)
 			throw new HttpError(500, "Algo salio mal")
 		}
-		res.json({ ok: true })
+		res.status(200).json({ ok: true })
 	},
 	async updateReserva(req, res) {
 		const { id } = req.params
@@ -51,7 +51,7 @@ const ReservasController = {
 			console.log(result)
 			throw new HttpError(500, "Algo salio mal")
 		}
-		res.json({ ok: true })
+		res.status(201).json({ ok: true })
 	},
 }
 export default ReservasController
